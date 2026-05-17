@@ -1,0 +1,57 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AdminDashboard from "./pages/AdminDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
+import ScanQR from "./pages/ScanQR";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Login />}
+        />
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        <Route
+          path="/admin"
+          element={<AdminDashboard />}
+        />
+
+        <Route
+          path="/student"
+          element={<StudentDashboard />}
+        />
+
+        <Route
+          path="/scan"
+          element={<ScanQR />}
+        />
+
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
